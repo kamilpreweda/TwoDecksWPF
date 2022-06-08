@@ -43,5 +43,16 @@ namespace TwoDecksWPF
                 Add(card);
             }
         }
+
+        public void Sort()
+        {
+            List<Card> sortedCards = new List<Card>(this);
+            sortedCards.Sort(new CardComparerByValue());
+            Clear();
+            foreach(Card card in sortedCards)
+            {
+                Add(card);
+            }
+        }
     }
 }
