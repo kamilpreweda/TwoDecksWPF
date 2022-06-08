@@ -82,5 +82,15 @@ namespace TwoDecksWPF
                 rightDeck.Sort();
             }
         }
+
+        private void leftDeckListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MoveCard(true);
+        }
+
+        private void rightDeckListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MoveCard(false);
+        }
     }
 }
