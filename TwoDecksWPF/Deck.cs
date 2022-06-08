@@ -23,5 +23,12 @@ namespace TwoDecksWPF
                 for (int value = 1; value <= 13; value++)
                     Add(new Card((Values)value, (Suits)suit));
         }
+
+        public Card Deal(int index)
+        {
+            Card cardToDeal = base[index];
+            RemoveAt(index);
+            return cardToDeal;
+        }
     }
 }
