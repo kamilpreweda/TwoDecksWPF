@@ -30,7 +30,7 @@ namespace TwoDecksWPF
 
         private void MoveCard(bool leftToRight)
         {
-            if ((Resources["rightDeck"] is Deck rightDeck) && (Resources["lefDeck"] is Deck leftDeck))
+            if ((Resources["rightDeck"] is Deck rightDeck) && (Resources["leftDeck"] is Deck leftDeck))
             {
                 if (leftToRight)
                 {
