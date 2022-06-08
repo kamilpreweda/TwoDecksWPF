@@ -30,5 +30,18 @@ namespace TwoDecksWPF
             RemoveAt(index);
             return cardToDeal;
         }
+
+        public void Shuffle()
+        {
+            List<Card> copy = new List<Card>(this);
+            Clear();
+            while(copy.Count > 0)
+            {
+                int index = random.Next(copy.Count);
+                Card card = copy[index];
+                copy.RemoveAt(index);
+                Add(card);
+            }
+        }
     }
 }
