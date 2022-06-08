@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 namespace TwoDecksWPF
 {
-    
+
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -39,7 +39,8 @@ namespace TwoDecksWPF
                         leftDeck.Remove(card);
                         rightDeck.Add(card);
                     }
-                } else
+                }
+                else
                 {
                     if (rightDeckListBox.SelectedItem is Card card)
                     {
@@ -47,6 +48,39 @@ namespace TwoDecksWPF
                         leftDeck.Add(card);
                     }
                 }
+            }
+        }
+
+        private void shuffleLeftDeck_Click(object sender, RoutedEventArgs e)
+        {
+            if (Resources["leftDeck"] is Deck leftDeck)
+            {
+                leftDeck.Shuffle();
+            }
+        }
+
+        private void resetLeftDeck_Click(object sender, RoutedEventArgs e)
+        {
+            if (Resources["leftDeck"] is Deck leftDeck)
+            {
+                leftDeck.Reset();
+            }
+        }
+
+        private void clearRightDeck_Click(object sender, RoutedEventArgs e)
+        {
+            if (Resources["rightDeck"] is Deck rightDeck)
+            {
+                rightDeck.Clear();
+            }
+        }
+
+        private void sortRightDeck_Click(object sender, RoutedEventArgs e)
+        {
+            if (Resources["rightDeck"] is Deck rightDeck)
+            {
+                rightDeck.Sort();
+            }
         }
     }
 }
