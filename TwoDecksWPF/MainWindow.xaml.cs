@@ -15,14 +15,33 @@ using System.Windows.Shapes;
 
 namespace TwoDecksWPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void MoveCard(bool leftToRight)
+        {
+            if ((Resources["rightDeck"] is Deck rightDeck) && (Resources["lefDeck"] is Deck leftDeck))
+            {
+                if (leftToRight)
+                {
+                    if (leftDeckListBox.SelectedItem is Card card)
+                    {
+                        leftDeck.Remove(card);
+                        rightDeck.Add(card);
+                    }
+                } else
+                {
+                    if (rightDeckListBox.SelectedItem is Card card)
+                    {
+                        rightDeck.Remove(card);
+                        leftDeck.Add(card);
+                    }
+                }
         }
     }
 }
