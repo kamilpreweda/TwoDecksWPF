@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TwoDecksWPF
 {
-    internal enum Suits
+    public enum Suits
     {
         Diamonds,
         Clubs,
