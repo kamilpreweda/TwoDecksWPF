@@ -21,6 +21,11 @@ namespace TwoDecksWPF
         public MainWindow()
         {
             InitializeComponent();
+
+            if (Resources["rightDeck"] is Deck rightDeck)
+            {
+                rightDeck.Clear();
+            }
         }
 
         private void MoveCard(bool leftToRight)
